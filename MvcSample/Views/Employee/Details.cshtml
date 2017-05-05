@@ -1,0 +1,50 @@
+﻿@using MvcSample.Models;
+
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (Employee employee in Model.Employees)
+        {
+        <dt>
+            @Html.DisplayNameFor(model => employee.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => employee.EmployeeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => employee.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => employee.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => employee.Dob)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => employee.Dob)
+        </dd>
+        <dt>
+
+        </dt>
+        <dd>
+            @Html.ActionLink("Delete", "Delete", new { id = employee.EmployeeCode }) |
+            @Html.ActionLink("Edit", "Edit", new { id = employee.EmployeeCode }) |
+        </dd>
+        }
+    </dl>
+</div>
+
